@@ -12,12 +12,13 @@ struct SequenceList {
 
 class ListManage {
 public:
-    ListManage() { InitList(); }
+    ListManage() { _InitList(); }
 protected:
     SequenceList list_;
+protected:
+    void _InitList();
+    void _ClearList();
 public:
-    void InitList();
-    void ClearList();
     void Insert(int pos, ElemType value);
     void Delete(int pos);
     void PushBack(ElemType value);
@@ -28,11 +29,11 @@ public:
     void PrintList();
 };
 
-void ListManage::InitList() {
-    ClearList();
+void ListManage::_InitList() {
+    _ClearList();
 }
 
-void ListManage::ClearList() {
+void ListManage::_ClearList() {
     list_.length = 0;
     memset(&list_, 0, sizeof(ElemType) * MAX_SIZE);
 }
