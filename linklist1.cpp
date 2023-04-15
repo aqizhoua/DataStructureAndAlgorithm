@@ -99,8 +99,8 @@ void LinkList::ReverseList(int pos) {
 void LinkList::MergeList(const LinkList& link_list) {
 	Node* new_head = new Node;
 	Node* new_temp = new_head;
-	Node* this_temp = head_;
-	Node* temp = link_list.head_;
+	Node* this_temp = head_->next;
+	Node* temp = link_list.head_->next;
 	while (this_temp && temp) {
 		Node* new_node = new Node;
 		new_node->next = nullptr;
